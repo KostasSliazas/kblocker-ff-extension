@@ -1,0 +1,144 @@
+:root {
+  --bg: #94a3b8;
+  --panel: #334155;
+  --panel-dark: #1e293b;
+  --text: #f1f5f9;
+  --muted: #cbd5e1;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --danger: #d94688;
+  --danger-hover: #be185d;
+  --border: 1px solid #475569;
+  --radius: 3px;
+  --gap: 4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: var(--gap);
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI",
+    "Noto Sans", Roboto, "Helvetica Neue",
+    "Liberation Sans", Arial, sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  padding: 10px;
+  background: var(--panel);
+  border: var(--border);
+  border-radius: var(--radius);
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+  color: white;
+}
+
+input {
+  flex: 1;
+  padding: 6px 8px;
+  outline: none;
+  border: var(--border);
+  border-radius: var(--radius);
+  background: var(--panel-dark);
+  color: white;
+}
+
+input::placeholder {
+  color: var(--muted);
+}
+
+button {
+  min-width: 52px;
+  padding: 4px 10px;
+  cursor: pointer;
+  border: var(--border);
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: white;
+  line-height: 1.5;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.remove {
+  background: var(--danger);
+}
+
+.remove:hover {
+  background: var(--danger-hover);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--gap);
+  padding: 0 0 0 4px;
+  background: var(--panel-dark);
+  border: var(--border);
+  border-radius: var(--radius);
+}
+
+span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+.empty {
+  justify-content: center;
+  color: var(--muted);
+  opacity: 0.8;
+}
+
+.tips {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.bottom {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.top {
+  display: flex;
+  gap: var(--gap);
+}
